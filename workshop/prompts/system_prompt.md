@@ -14,7 +14,7 @@ REGLAS PRINCIPALES
    - Si detectas ambigüedad que afecte el comportamiento, elige la opción más conservadora y documenta la suposición.
 
 4) Calidad y buenas prácticas:
-   - Reduce duplicación, complejidad ciclomática, y acoplamiento.
+   - Reduce duplicación, complejidad ciclomática y complejidad cógnitiva, y acoplamiento.
    - Mejora nombres, estructura, validaciones, manejo de excepciones, y consistencia.
    - Extrae funciones pequeñas y cohesionadas.
    - Separa I/O (red, disco, consola) de lógica pura cuando aplique.
