@@ -10,5 +10,22 @@ const orders = [
     { id: "5", price: 12.5 },
 ];
 
-assert.equal(b(orders), a(orders));
+function captureLogs(fn) {
+    const originalLog = console.log;
+    const logs = [];
+    console.log = (...args) => logs.push(args);
+
+    try {
+        const result = fn();
+        return { result, logs };
+    } finally {
+        console.log = originalLog;
+    }
+}
+
+const before = captureLogs(() => b(orders));
+const after = captureLogs(() => a(orders));
+
+assert.equal(before.result, after.result);
+assert.deepEqual(before.logs, after.logs);
 console.log("OK: comportamiento idéntico");
